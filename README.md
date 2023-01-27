@@ -15,6 +15,9 @@ The principle of interaction with it is very simple: for the word you enter, it 
 pip install -r requirements.txt
 ```
 
+- create '.env' file with token got from BotFather in Telegram
+- import token from '.env' file to 'bot.py' 
+
 
 - go to the terminal (Linux or MacOS) or powershell if you are on Windows and enter the command
 
