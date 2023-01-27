@@ -1,4 +1,4 @@
-# @LudvigDodiBot
+# oliwer_twist_bot
 
 This Telegram bot helps you learn English.
 
@@ -19,19 +19,8 @@ pip install -r requirements.txt
 - go to the terminal (Linux or MacOS) or powershell if you are on Windows and enter the command
 
 ```sh
-Windows:
 python app.py
 ```
-
-```sh
-MacOS:
-python3 app.py
-```
-```sh
-Linux:
-python3 app.py
-```
-
 
 ## License
 
