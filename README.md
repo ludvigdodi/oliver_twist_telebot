@@ -1,4 +1,4 @@
-# oliwer_twist_bot
+# @oliwer_twist_bot
 
 This Telegram bot helps you learn English.
 
