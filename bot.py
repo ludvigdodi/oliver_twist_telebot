@@ -51,7 +51,7 @@ def fill_matched_sentences(message):
 def create_result_message(matched_sentences: list) -> str:
     result_message = ""
     if not matched_sentences:
-        result_message = "⛔ Вибач, я не знайшов речень з твоїм словом!!!\n\n❗❗❗ Воно точно англійське???  "
+        result_message = "⛔ Вибач, я не знайшов речень з твоїм словом!!!\n\n❗ Воно точно англійське???  "
     if len(matched_sentences) >= 1:
         result_message = matched_sentences
     return result_message
