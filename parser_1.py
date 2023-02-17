@@ -1,6 +1,5 @@
 import requests
 import os
-import random
 import sqlite3 as sq
 from bs4 import BeautifulSoup as bs
 
