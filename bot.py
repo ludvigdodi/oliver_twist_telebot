@@ -1,26 +1,11 @@
 import telebot
-import requests
 import os
 import random
-from bs4 import BeautifulSoup
+from parser_1 import sentences
 from dotenv import load_dotenv
 
 load_dotenv()
 bot = telebot.TeleBot(os.environ.get("TOKEN"))
-
-# Парсимо текст
-url = 'https://www.gutenberg.org/cache/epub/730/pg730-images.html'
-
-
-def parser(url):
-    req = requests.get(url)
-    soup = BeautifulSoup(req.text, "html.parser")
-    text = soup.find_all('p')
-    return [s.get_text(strip=True) for s in text]
-
-
-sentences = parser(url)
-
 
 # Хендлер на команду /start
 @bot.message_handler(commands=["start"])
@@ -28,7 +13,6 @@ def start(m, res=False):
     bot.send_message(m.chat.id,
                      'Привіт ✋\n\nЯ󠁧󠁢󠁥󠁮󠁧󠁿 🤖, який допогає практикувати англійську 🏴󠁧󠁢󠁥󠁮󠁧󠁿 мову!\n\nНадішли мені '
                      'слово і я знайду кілька речень з ним у дуже відомому 📕 творі дуже відомого 🖋🧔 письменника.')
-
 
 # Отримання повідомлень від користувача та виклик ф-ції обробки та складання відповіді
 @bot.message_handler(content_types=["text"])
@@ -42,7 +26,7 @@ def fill_matched_sentences(message):
     matched_sentences = []
     for sentence in sentences:
         sentence_txt = sentence
-        if message.text in sentence_txt:
+        if message.text.lower() in sentence_txt.lower():
             matched_sentences = sentence_txt
     return matched_sentences
 
